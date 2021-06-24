@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>git相关技术点 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="基础
+git add . 提交至暂存区
+git com...">
+  <meta name="author" content="逄永康">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: false,
+        alipay: '',
+        wechat: ''
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">git相关技术点</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright">逄永康的博客</div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://images8.alphacoders.com/430/thumb-1920-430944.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">git相关技术点</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>June 24, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3716</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><ul>
+<li><code>git add .</code> 提交至暂存区</li>
+<li><code>git commit</code>  把文件提交到仓库</li>
+<li>或：</li>
+<li><code>git commit -m &#39;&#39;</code> 本次提交说明<br>为什么要执行两步 <br><br><code>git add</code> 将变更的文件提交至暂存区<br><br><code>git commit</code> 将暂存区的文件提交至本地仓库<h1 id="修改后"><a href="#修改后" class="headerlink" title="修改后"></a>修改后</h1></li>
+<li><code>git status</code> 查看当前仓库状态</li>
+<li><code>git diff</code> 查看具体修改了什么，对比差异</li>
+<li><code>git add .</code> 提交至暂存区</li>
+<li><code>git commit -m &#39;本次修改备注&#39;</code> 提交到本地仓库，添加备注信息</li>
+<li><code>git push</code> 推送到远程分支<h1 id="查看log日志"><a href="#查看log日志" class="headerlink" title="查看log日志"></a>查看log日志</h1></li>
+<li><code>git log</code> 显示从最近到最远的提交日志</li>
+<li><code>git log --pretty=oneline</code> 简化日志界面<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1></li>
+<li><code>git reset --hard HEAD^</code> 退回上一个版本</li>
+<li><code>git reset --hard HEAD^^^</code>  退回三个版本</li>
+<li>HEAD指向的版本就是当前版本，所以在历史版本中切换，就指定当前HEAD： <code>git reset --hard commit_id</code></li>
+<li>切换前用 <code>git log </code>查看提交历史，以便确定退回到哪个版本</li>
+<li><strong>关闭命令行窗口就找不到被恢复抹掉的版本了</strong>调用：<code>git reflog</code>查看命令历史，可以找到之前的<strong>commit版本</strong><h1 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h1></li>
+<li>提交到暂存区</li>
+<li>只有<code>git add</code> 提交到<strong>暂存区</strong>的才会被<code>git commit</code> 到仓库<h1 id="撤销工作区更改"><a href="#撤销工作区更改" class="headerlink" title="撤销工作区更改"></a>撤销工作区更改</h1></li>
+<li><code>git chekout --文件名</code> 撤销更改</li>
+<li><strong>‘–’</strong> 两条杠非常重要，如果不加 – 就成了切换分支的命令</li>
+<li><strong>撤回到最近一次commit 和add 的状态</strong><h1 id="撤销暂存区更改"><a href="#撤销暂存区更改" class="headerlink" title="撤销暂存区更改"></a>撤销暂存区更改</h1></li>
+<li><code>git status</code> 查看状态</li>
+<li><code>git reset HEAD &lt;file&gt;</code> 将暂存区的更改撤销，重新放回工作区<h1 id="撤销仓库中的更改（未push到远程分支）"><a href="#撤销仓库中的更改（未push到远程分支）" class="headerlink" title="撤销仓库中的更改（未push到远程分支）"></a>撤销仓库中的更改（未push到远程分支）</h1></li>
+<li><code>git reset --hard HEAD^</code>撤回到上个版本</li>
+</ul>
+<h1 id="撤销总结："><a href="#撤销总结：" class="headerlink" title="撤销总结："></a>撤销总结：</h1><ul>
+<li>撤销工作区更改：<code>git chekout --file</code></li>
+<li>撤销暂存区更改：<code>git reset HEAD &lt;file&gt;</code></li>
+<li>撤销仓库更改：<code>git reset --hard HEAD^</code> 或 <code>git reset --hard commit_id</code><h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1>当工作区删除某个文件时</li>
+<li><code>git status</code>查看当前状态，git会知道有文件被删除</li>
+<li><code>git rm &#39;file&#39;</code> 从版本库中删除或者<code>git add &amp;commit</code>效果是一样的</li>
+<li>如果是误删了文件(不慌，版本库里还有)：<code>git chekout --file</code></li>
+</ul>
+<h1 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h1><p><strong>关联分支</strong></p>
+<ul>
+<li>关联一个远程分支<code>git remote add origin git@serve-name:path/repo-name.git</code></li>
+<li>关联后使用<code>git push -u origin master</code>第一次推送master分支的所有内容</li>
+<li>之后使用 <code>git push origin master</code>推送最新更改</li>
+</ul>
+<h1 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h1><ul>
+<li><code>git clone 地址</code>将代码克隆到本地</li>
+<li>Git支持多种协议包括<code>https</code>，但通过<code>ssh</code>支持的原生<code>git</code>协议速度更快</li>
+</ul>
+<h1 id="创建合并分支"><a href="#创建合并分支" class="headerlink" title="创建合并分支"></a>创建合并分支</h1><ul>
+<li>创建dev分支<code>git checkout -b dev</code></li>
+<li>查看分支 <code>git branch </code> 会列出所有分支，带<code>*</code>号的是当前分支</li>
+<li>切换分支 <code> git checkout dev</code></li>
+<li>在dev上进行修改并提交，再切回master<code>git checkout master</code>发现dev的提交在master上没有</li>
+<li>合并分支<code>git merge dev</code></li>
+<li>合并完之后就可以删除<code>dev</code>分支了<code>git checkout -d dev</code> </li>
+<li><code>gir branch -D dev</code>(强制删除)</li>
+<li>删除后,查看分支<code>git branch </code> 就只剩master了</li>
+</ul>
+<h1 id="基于某个分支创建我的分支"><a href="#基于某个分支创建我的分支" class="headerlink" title="基于某个分支创建我的分支"></a>基于某个分支创建我的分支</h1><ul>
+<li><code>git fetch</code> 拉取</li>
+<li><code>git checkout PC05</code> 切换到PC05分支</li>
+<li><code>git checkout -b PC05_pangyongkang</code> 创建我的分支</li>
+<li><code>git push origin PC05_pangyongkang</code>推送到远程，创建我的远程分支</li>
+<li><code>git pull</code>拉取分支，会提示关联远程分支</li>
+<li><code>git branch --set-upstream-to=origin/PC05_pangyongkang PC05_pangyongkang </code>将本地分支与远程分支关联</li>
+<li><code>git pull </code>就可以拉取了(此时必然没有更新)</li>
+</ul>
+<h1 id="查看commit记录"><a href="#查看commit记录" class="headerlink" title="查看commit记录"></a>查看commit记录</h1><ul>
+<li><p>1、仅仅想看最后一次的提交<br><code> git log -n 1</code></p>
+</li>
+<li><p>2、想看到最近一次提交所有更改过的文件<br><code>git log -n 1 --stat</code></p>
+</li>
+<li><p>3、想看到最近一次提交所有更改的细节<br><code> git log -n 1 -p</code></p>
+</li>
+</ul>
+<h1 id="并不想提交的代码，但是要切换分支。stash储藏代码"><a href="#并不想提交的代码，但是要切换分支。stash储藏代码" class="headerlink" title="并不想提交的代码，但是要切换分支。stash储藏代码"></a>并不想提交的代码，但是要切换分支。stash储藏代码</h1><ul>
+<li><code>git stash</code> 储藏当前代码（清空工作区）</li>
+<li><code>git stash list</code>查看储藏的代码list</li>
+<li><strong>恢复</strong></li>
+<li>方法1：<code>git stash apply</code> 恢复，保留stash中的储藏</li>
+<li><code>git stash apply stash@&#123;0&#125;</code> 0 为stash list中的下标</li>
+<li><code>git stash drop</code> 删除stash中的记录</li>
+<li>方法2：<code>git stash pop</code> 恢复，并删除stash中的储藏</li>
+<li><strong>总结（常用）：</strong></li>
+<li>git stash 储藏</li>
+<li>git pop 恢复<h1 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h1></li>
+</ul>
+<p><strong>发布版本时，在版本库中打一个标签(tag)</strong></p>
+<ul>
+<li><code>git checkout PC01</code>切换到要标签的分支</li>
+<li><code>git tag v1.0</code> 对当前分支打个标签</li>
+<li><code>git tag</code> 查看所有标签</li>
+<li><code>默认标签是打在最新提交的commit上的</code></li>
+<li><strong>标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。</strong></li>
+<li><code>git tag -d v1.0</code> 删除标签</li>
+<li><code>git push origin v1.0</code>将标签推送至远程</li>
+</ul>
+<h1 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h1><ul>
+<li><code>git config --global alias.st status</code>现在敲git st = git status。</li>
+</ul>
+<h1 id="查当前本地分支对应哪个分支"><a href="#查当前本地分支对应哪个分支" class="headerlink" title="查当前本地分支对应哪个分支"></a>查当前本地分支对应哪个分支</h1><ul>
+<li><p><code>git branch -vv</code></p>
+<h1 id="cherry-pick仅合并某个commit提交"><a href="#cherry-pick仅合并某个commit提交" class="headerlink" title="cherry-pick仅合并某个commit提交"></a>cherry-pick仅合并某个commit提交</h1></li>
+<li><p>先用<code>git log</code>查看commit的id，复制下来</p>
+</li>
+<li><p><code>git checkout</code> 到master分支下</p>
+</li>
+<li><p><code>git cherry-pick &lt;C2_id&gt;</code>如果cherry-pick过程没有出现冲突的话，那就是完成了合并</p>
+</li>
+<li><p>如果有冲突: 1&gt;解决冲突.2&gt;git add . 3&gt;git cherry-pick –continue</p>
+</li>
+</ul>
+<h1 id="commit规范"><a href="#commit规范" class="headerlink" title="commit规范"></a>commit规范</h1><p>用于说明 commit 的类别，只允许使用下面7个标识。</p>
+<p>```feat：新功能（feature）</p>
+<p>fix：修补bug</p>
+<p>docs：文档（documentation）</p>
+<p>style： 格式（不影响代码运行的变动）</p>
+<p>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</p>
+<p>improvement：优化</p>
+<p>test：增加测试</p>
+<p>chore：构建过程或辅助工具的变动```</p>
+<h1 id="统计代码总行数"><a href="#统计代码总行数" class="headerlink" title="统计代码总行数"></a>统计代码总行数</h1><p><code>find . -name &quot;*.vue&quot; -or -name &quot;*.js&quot; |xargs grep -v &quot;^$&quot;|wc -l</code></p>
+<h1 id="删除某几个commit提交"><a href="#删除某几个commit提交" class="headerlink" title="删除某几个commit提交"></a>删除某几个commit提交</h1><ul>
+<li>假设：1、2、3、4、5、6、7、8次提交（8为最后一次）</li>
+<li>要删除  3 4 6 提交的commit</li>
+<li>记录commit2 的id ==&gt; id2</li>
+<li>git rebase -i id2; 列出2以后的所有commit<br><code>pick 59692ca8dc �🐞fix新建会议议):功能区新建会议仍有有tc成员选择择 pick 6b37e899bb �🐞fix行动项项):行动项条款视图和行动项视图切换换 pick 01aa1fb182 �🐞fix项目文件件):项目文件点击行动项名称跳转到行动项项 pick aacf2c28f3 �🐞fix(MDA):受理员驳回给申请人，申请人进入无暂存按钮钮 pick 0b7ed20a7b �🐞fix(CTSOAHY):修复样式覆盖问题题 pick e0a235e8aa �🐞fix(hyg hyj):取证件编号值错误误 pick 9470090431 ✨feat(国籍模块路由): 国籍模块路由 pick 5ba11b34ad �🐞fix注册信息息):服务地点、检测地点信息修改不更新问题修复复 pick af14569240 �🐞fix(stc): st主证删除地址址</code></li>
+<li>输入 i 进入编辑模式</li>
+<li>将要删除的commit前的pick改成drop,</li>
+<li>改完之后按esc退出编辑模式。输入：qw 退出并保存</li>
+</ul>
+<h1 id="删除本地冗余分支（远程已删除）"><a href="#删除本地冗余分支（远程已删除）" class="headerlink" title="删除本地冗余分支（远程已删除）"></a>删除本地冗余分支（远程已删除）</h1><ul>
+<li>使用 git branch -a 可以查看本地分支和远程分支情况</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/saysmy/p/9166331.html">https://www.cnblogs.com/saysmy/p/9166331.html</a></li>
+</ul>
+
+      </section>
+      <section class="extra">
+        
+        
+        
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2021/06/23/hello-world/">Hello World<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-text">基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%90%8E"><span class="toc-text">修改后</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Blog%E6%97%A5%E5%BF%97"><span class="toc-text">查看log日志</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-add"><span class="toc-text">git add</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9B%B4%E6%94%B9"><span class="toc-text">撤销工作区更改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%9A%82%E5%AD%98%E5%8C%BA%E6%9B%B4%E6%94%B9"><span class="toc-text">撤销暂存区更改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E4%BB%93%E5%BA%93%E4%B8%AD%E7%9A%84%E6%9B%B4%E6%94%B9%EF%BC%88%E6%9C%AApush%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%EF%BC%89"><span class="toc-text">撤销仓库中的更改（未push到远程分支）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">撤销总结：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">删除文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-text">远程分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%8B%E9%9A%86"><span class="toc-text">克隆</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="toc-text">创建合并分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E5%88%9B%E5%BB%BA%E6%88%91%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-text">基于某个分支创建我的分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bcommit%E8%AE%B0%E5%BD%95"><span class="toc-text">查看commit记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B6%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%8C%E4%BD%86%E6%98%AF%E8%A6%81%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E3%80%82stash%E5%82%A8%E8%97%8F%E4%BB%A3%E7%A0%81"><span class="toc-text">并不想提交的代码，但是要切换分支。stash储藏代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86"><span class="toc-text">标签管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D"><span class="toc-text">配置别名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E5%BD%93%E5%89%8D%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%AF%B9%E5%BA%94%E5%93%AA%E4%B8%AA%E5%88%86%E6%94%AF"><span class="toc-text">查当前本地分支对应哪个分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cherry-pick%E4%BB%85%E5%90%88%E5%B9%B6%E6%9F%90%E4%B8%AAcommit%E6%8F%90%E4%BA%A4"><span class="toc-text">cherry-pick仅合并某个commit提交</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#commit%E8%A7%84%E8%8C%83"><span class="toc-text">commit规范</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%80%BB%E8%A1%8C%E6%95%B0"><span class="toc-text">统计代码总行数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E5%87%A0%E4%B8%AAcommit%E6%8F%90%E4%BA%A4"><span class="toc-text">删除某几个commit提交</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%86%97%E4%BD%99%E5%88%86%E6%94%AF%EF%BC%88%E8%BF%9C%E7%A8%8B%E5%B7%B2%E5%88%A0%E9%99%A4%EF%BC%89"><span class="toc-text">删除本地冗余分支（远程已删除）</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=676639931 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="mailto:pyk_1996@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright">逄永康的博客</div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
